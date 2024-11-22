@@ -111,7 +111,10 @@ def delete_student(student_id):
         return jsonify({"message": "Student deleted"})
     else:
         return jsonify({"message": "Student not found"}), 404
+    
+from waitress import serve
+from app import app  # Make sure to import your app
 
-if __name__ == '__main__':
-    # app.run(debug=True)
-    serve(app, host='0.0.0.0', port=8080)
+if __name__ == "__main__":
+    serve(app, host='0.0.0.0', port=5000)
+
